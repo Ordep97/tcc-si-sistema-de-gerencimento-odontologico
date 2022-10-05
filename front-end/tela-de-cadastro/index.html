@@ -4,9 +4,29 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+    <div id="cadastro">
+        <h1>CADASTRO DE CLIENTE</h1>
+        <form action="">
+            <label for="nome">Nome:</label>
+            <input type="text" name="nome" id="nome" placeholder="Nome Completo" autocomplete="off">
+            <label for="CPF">CPF:</label>
+            <input type="text" name="CPF" id="CPF" placeholder="000.000.000-00" autocomplete="off" required>*
+            
+            <label for="Sexo">Selecione sexo:</label>
+
+            <select id="Sexo">
+                <option value=""></option>
+                <option value="Masculino">Masculino</option>
+                <option value="Feminino">Feminino</option>
+                <option value="Transgênero">Transgênero</option>
+                <option value="Gênero neutro" selected>Gênero neutro</option>
+            </select>
+        </form>
+    </div>
     
 </body>
 </html>
