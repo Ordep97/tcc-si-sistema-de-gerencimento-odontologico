@@ -1,7 +1,7 @@
 //NOME
 let inputNome = document.querySelector(".nameClient");
 inputNome.addEventListener("keydown", function(e) {  
-  if (e.key > "0" && e.key < "9") {
+  if (e.key > "0" && e.key <= "9") {
     e.preventDefault();
   }
 });
