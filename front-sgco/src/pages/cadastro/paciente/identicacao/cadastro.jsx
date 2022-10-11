@@ -1,7 +1,7 @@
 import React from "react";
 import "./cadastro-style.css";
 
-const CadastroPage = () => {
+const CadastroIdentificacaoPage = () => {
     return (
         <div>
             <h1>CADASTRO DE PACIENTE</h1>
@@ -47,4 +47,4 @@ const CadastroPage = () => {
     );
 }
 
-export default CadastroPage;
+export default CadastroIdentificacaoPage;

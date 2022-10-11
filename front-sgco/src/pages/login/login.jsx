@@ -1,12 +1,7 @@
 import React from "react";
 import "./login-style.css";
 // import {ReactComponent as background} from '../../assets/login/background-Login.png';
-// import {
-//     container,
-//     inputLabel,
-//     Button,
-//     TextField
-//   } from "@material-ui/core";
+
 
   const LoginPage = () => {
     return(
@@ -18,7 +13,6 @@ import "./login-style.css";
                 {/* placeholder é uma "dica" para orientar o usuário o que digitar */}
                 <label for="password">Senha</label>
                 <input type="password" name="password" id="password" placeholder="Digite a sua senha"/>
-                {/* <a href="#" id="forgot-pass">Esqueceu a senha?</a> */}
                 <input type="submit" value="Entrar"/>            
             </div>
         </div>    

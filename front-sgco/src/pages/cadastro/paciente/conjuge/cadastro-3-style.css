@@ -1,0 +1,111 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: helvetica;
+    color: #000;
+    border: none;
+}
+
+textarea:focus,
+input:focus {
+    outline: none;
+}
+
+/* container do conjuge */
+.container {
+    background-color: #FFF;
+    width: 30%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px 30px;
+    margin-top: 30vh;
+    margin-bottom: 30vh;
+    border-radius: 10px;
+    text-align: center;
+    opacity: 0.7;
+}
+
+/* formulário */
+
+.form {
+    margin-top: 30px;
+    margin-bottom: 40px;
+}
+
+label,
+input {
+    display: block;
+    width: 100%;
+    text-align: left;
+
+}
+
+label {
+    margin-top: 10px;
+    font-weight: bold;
+    font-size: .8rem;
+}
+
+input {
+    border-bottom: 2px solid #323232;
+    padding: 10px;
+    font-size: 1rem;
+}
+
+input:focus {
+    border-bottom: 2px solid #08558B;
+}
+
+#forgot-pass {
+    text-align: right;
+    display: block;
+}
+
+input[type="submit"] {
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    border: none;
+    height: 40px;
+    border-radius: 20px;
+    margin-top: 30px;
+    color: #FFF;
+    background-color: #08558B;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #1b223c;
+    transition: .5s;
+}
+
+@media only screen and (min-width : 100px) {
+    .container {
+        width: 90%;
+    }
+}
+
+@media only screen and (min-width : 420px) {
+    .container {
+        width: 70%;
+    }
+}
+
+@media only screen and (min-width : 680px) {
+    .container {
+        width: 60%;
+    }
+}
+
+@media only screen and (min-width : 800px) {
+    .container {
+        width: 55%;
+    }
+}
+
+@media only screen and (min-width : 992px) {
+    .container {
+        width: 30%;
+    }
+}
