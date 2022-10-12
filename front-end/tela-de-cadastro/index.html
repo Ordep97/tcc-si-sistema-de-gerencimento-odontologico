@@ -7,6 +7,13 @@
     <title>Cadastro</title>
     <link rel="stylesheet" href="assets/css/styles.css">
     <script src="assets/js/scritps.js" type="text/javascript"></script>
+    <script type="text/javascript" src="assets/js/jquery.maskedinput-1.1.4.pack.js"></script>
+    <script type="text/javascript" src="assets/js/jquery-1.2.6.pack.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $("#cpf").mask("999.999.999-99");
+            });
+        </script>
 </head>
 <body>
     <h1>CADASTRO DE PACIENTE</h1>
@@ -14,10 +21,10 @@
         <h1>DADOS DE IDENTIFICAÇÃO</h1>
         <form class="formulario">
             <label for="nome">Nome:</label>
-                <input type="text" class="nameClient" placeholder="Nome Completo">
+                <input type="text" class="nameClient" pattern="^[a-zA-Z][a-zA-Z-_.]{1,20}$" placeholder="Apenas letras">
 
             <label for="CPF">CPF:</label>
-                <input type="text" id="campo_cpf" placeholder="000.000.000-00" autocomplete="off" required>
+                <input type="text" id="cpf" pattern="\d{3}.\d{3}.\d{3}-\d{2}" placeholder="000.000.000-00" autocomplete="off" required>
             
             <label for="Sexo">Selecione sexo:</label>
                 <select id="Sexo">
