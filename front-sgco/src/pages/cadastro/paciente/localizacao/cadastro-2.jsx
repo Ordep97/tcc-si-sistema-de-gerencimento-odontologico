@@ -4,10 +4,14 @@ import "./cadastro-2-style.css";
 const CadastroLocalizacaoPage = () => {
     return (
         <div class="format">   
+
             <h1>CADASTRO DE PACIENTE</h1>
-            <section class="container">
+            
+            <section class="container-localizacao">
+
                 <h2>DADOS DE LOCALIZAÇÃO</h2>
-                <form class="form">
+
+                <form class="form-localizacao">
                     <label for="Logradouro">Logradouro:</label>
                     <input type="text" placeholder="Avenida/Estrada/Rua" />
 
@@ -69,8 +73,9 @@ const CadastroLocalizacaoPage = () => {
                         <option value="Mexico">Mexico</option>
                         <option value="Espanha">Espanha</option>
                     </select>
-                    <input type="submit1" value="Cadastrar dependente" />
-                    <input type="submit2" value="Finalizar Cadastro" />
+
+                    <input type="submit1CadastrarDependente" value="Cadastrar dependente" />
+                    <input type="submitFinalizarCadastro" value="Finalizar Cadastro" />
                 </form>
             </section>
         </div>
