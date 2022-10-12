@@ -1,4 +1,4 @@
-* {
+/* * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -10,10 +10,10 @@
 textarea:focus,
 input:focus {
     outline: none;
-}
+} */
 
 /* container do conjuge */
-.container {
+/* .container {
     background-color: #FFF;
     width: 30%;
     margin-left: auto;
@@ -24,11 +24,11 @@ input:focus {
     border-radius: 10px;
     text-align: center;
     opacity: 0.7;
-}
+} */
 
 /* formulário */
 
-.form {
+/* .form {
     margin-top: 30px;
     margin-bottom: 40px;
 }
@@ -108,4 +108,4 @@ input[type="submit"]:hover {
     .container {
         width: 30%;
     }
-}
+} */

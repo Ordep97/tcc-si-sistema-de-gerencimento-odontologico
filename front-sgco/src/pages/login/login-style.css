@@ -1,56 +1,47 @@
 /* Separando os estilos em blocos */
 
 /* bloco geral*/
-* {
+/* * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: helvetica;
     color: #000;
     border: none;
-}
-
-body {
-    background-image: url('../../assets/login/background-Login.png');
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-attachment: fixed;
-    background-size: cover
-}
+} */
 
 textarea:focus,
 input:focus {
     outline: none;
 }
 
-a {
-    font-size: .8rem;
-    margin-top: 10px;
-}
-
-a:hover {
-    color: #08558B;
-}
-
 /* container do login */
-.container {
-    background-color: #FFF;
-    width: 30%;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 20px 30px;
-    margin-top: 30vh;
-    margin-bottom: 30vh;
-    border-radius: 10px;
-    text-align: center;
-    opacity: 0.7;
+.container-login {
+    background-image: url('../../assets/login/background-Login.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    background-size: cover;
+    height: 100%;
+    position: relative;
 }
 
 /* formulário */
 
-.form {
-    margin-top: 30px;
-    margin-bottom: 40px;
+.form-login {
+    background-color: #FFF;
+    width: 30%;
+    margin:auto;
+    /* margin-right: auto; */
+    padding: 20px 30px;
+    /* margin-top: 30vh; */
+    /* margin-bottom: 30vh; */
+    border-radius: 10px;
+    text-align: center;
+    opacity: 0.7;
+    position: absolute;
+    top: 30%;
+    left: 30%;
 }
 
 label,
@@ -101,31 +92,31 @@ input[type="submit"]:hover {
 }
 
 @media only screen and (min-width : 100px) {
-    .container {
+    .form-login {
         width: 90%;
     }
 }
 
 @media only screen and (min-width : 420px) {
-    .container {
+    .form-login {
         width: 70%;
     }
 }
 
 @media only screen and (min-width : 680px) {
-    .container {
+    .form-login {
         width: 60%;
     }
 }
 
 @media only screen and (min-width : 800px) {
-    .container {
+    .form-login {
         width: 55%;
     }
 }
 
 @media only screen and (min-width : 992px) {
-    .container {
+    .form-login {
         width: 30%;
     }
 }
