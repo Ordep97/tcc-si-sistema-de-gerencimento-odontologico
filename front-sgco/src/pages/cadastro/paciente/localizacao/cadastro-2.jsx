@@ -74,7 +74,7 @@ const CadastroLocalizacaoPage = () => {
                         <option value="Espanha">Espanha</option>
                     </select>
 
-                    <input type="submit1CadastrarDependente" value="Cadastrar dependente" />
+                    <input type="submitCadastrarDependente" value="Cadastrar dependente" />
                     <input type="submitFinalizarCadastro" value="Finalizar Cadastro" />
                 </form>
             </section>
