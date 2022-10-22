@@ -1,13 +1,16 @@
 import React from "react";
-import "./cadastro-style.css";
+import "./cadastro-identificacao-style.css";
 
 const CadastroIdentificacaoPage = () => {
     return (
-        <div>
-            <h1>CADASTRO DE PACIENTE</h1>
-            <section class="container">
-                <h2>DADOS DE IDENTIFICAÇÃO</h2>
-                <form class="form">
+            <section class="container-identificacao">
+
+                <h1>CADASTRO DE PACIENTE</h1>
+
+                <form class="form-identificacao">
+
+                    <h2>DADOS DE IDENTIFICAÇÃO</h2>
+
                     <label for="nome">Nome:</label>
                     <input type="text" class="nameClient" placeholder="Nome Completo" />
 
@@ -40,10 +43,9 @@ const CadastroIdentificacaoPage = () => {
                         <option value="Casado">Casado(a)</option>
                         <option value="Viúvo">Viúvo(a)</option>
                     </select>
-                    <input type="submit" value="Enviar" />
+                    <input type="submitProximo" value="Próximo" />
                 </form>
             </section>
-        </div>
     );
 }
 
