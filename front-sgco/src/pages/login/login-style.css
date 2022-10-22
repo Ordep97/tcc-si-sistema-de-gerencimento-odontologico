@@ -24,6 +24,9 @@ textarea:focus, input:focus {
     border-radius: 15px;
     text-align: center;
     opacity: 0.7;
+    width: 500px;
+    min-width: 300px;
+    box-sizing: border-box;
 }
 
 label, input, select {
@@ -73,35 +76,35 @@ input[type="submitEntrar"] {
 
 input[type="submitEntrar"]:hover {
     background-color: #1b223c;
-    transition: .5s;
+    transition: 1s;
 }
 
 @media only screen and (min-width : 100px) {
     .form-login {
-        width: 65%;
+        min-width: 300px;
     }
 }
 
 @media only screen and (min-width : 420px) {
     .form-login{
-        width: 60%;
+        min-width: 300px;
     }
 }
 
 @media only screen and (min-width : 680px) {
     .form-login{
-        width: 60%;
+        min-width: 300px;
     }
 }
 
 @media only screen and (min-width : 800px) {
     .form-login{
-        width: 55%;
+        min-width: 300px;
     }
 }
 
 @media only screen and (min-width : 992px) {
     .form-login{
-        width: 50%;
+        min-width: 300px;
     }
 }
