@@ -43,7 +43,9 @@ const CadastroIdentificacaoPage = () => {
                         <option value="Casado">Casado(a)</option>
                         <option value="Viúvo">Viúvo(a)</option>
                     </select>
-                    <input type="submitProximo" value="Próximo" />
+
+                    <a href="http://localhost:3000/cadastro-localizacao"><input type="submitProximo" value="Próximo"></input></a>
+                    {/* <input type="submitProximo" value="Próximo" href="http://localhost:3000/cadastro-localizacao" /> */}
                 </form>
             </section>
     );
