@@ -45,7 +45,6 @@ const CadastroIdentificacaoPage = () => {
                     </select>
 
                     <a href="http://localhost:3000/cadastro-localizacao"><input type="submitProximo" value="Próximo"></input></a>
-                    {/* <input type="submitProximo" value="Próximo" href="http://localhost:3000/cadastro-localizacao" /> */}
                 </form>
             </section>
     );
