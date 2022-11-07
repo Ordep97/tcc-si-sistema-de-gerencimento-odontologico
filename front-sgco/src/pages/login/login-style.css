@@ -19,11 +19,11 @@ textarea:focus, input:focus {
 /* formulário */
 
 .form-login {
-    background-color: #FFF;
+    background-color: none;
     padding: 40px 40px;
     border-radius: 15px;
     text-align: center;
-    opacity: 0.7;
+    /* opacity: 0.7; */
     width: 500px;
     min-width: 300px;
     box-sizing: border-box;
@@ -42,22 +42,22 @@ label {
     font-size: .9rem;
 }
 
-input, select{
-
-    margin-top: 5px;
-    border-bottom: 2px solid #323232;
-    
-    /* border: none; */
+input, select{ 
     margin-top: 3px;
     border-bottom: 2px solid #323232;
     padding: 10px;
     font-size: 1rem;
 }
 
+input[type="email"], input[type="password"]{
+    opacity: 0.5;
+}
+
 input:focus {
     border-radius: none;
     border: none;
     border-bottom: 2px solid black;
+    opacity: 1;
 }
 
 /* Botão de "Enviar" */
@@ -72,6 +72,7 @@ input[type="submitEntrar"] {
     color: #FFF;
     background-color: #08558B;
     cursor: pointer;
+    opacity: 1;
 }
 
 input[type="submitEntrar"]:hover {

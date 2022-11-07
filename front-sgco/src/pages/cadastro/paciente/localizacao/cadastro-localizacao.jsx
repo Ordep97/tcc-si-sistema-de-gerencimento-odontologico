@@ -49,7 +49,7 @@ const CadastroLocalizacaoPage = () => {
                         <option value="Mato Grosso do Sul">MS</option>
                         <option value="Minas Gerais">MG</option>
                         <option value="Para">PA</option>
-                        <option value="Paraiba">PB</option>
+                        <option value="Paraiba">PB</option> 
                         <option value="Parana">PR</option>
                         <option value="Pernambuco">PE</option>
                         <option value="Piaui">PI</option>
