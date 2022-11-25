@@ -1,21 +1,27 @@
 package tcc.si.controller;
 
+import org.json.simple.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import tcc.si.model.ListResponse;
-import tcc.si.model.ObjectResponse;
-import tcc.si.model.User;
+import tcc.si.model.Usuario;
 import tcc.si.repository.UserRepository;
+import tcc.si.service.UserService;
 
 import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 
 @RestController
+@EnableAutoConfiguration
 @RequestMapping("/api/v1/users")
 public class UserController {
 
     @Autowired
     private UserRepository userRepository;
+
+    @Autowired
+    UserService userService;
 
     /*
      * Get all users
@@ -25,7 +31,7 @@ public class UserController {
         ListResponse response = new ListResponse();
         response.setMessage("Successfully Retrieved");
         response.setStatusCode(http.getStatus());
-        List<User> users = userRepository.findAll();
+        List<Usuario> users = userRepository.findAll();
         response.setData(users);
         return response;
     }
@@ -34,12 +40,12 @@ public class UserController {
      * Create new user
      */
     @RequestMapping(method = RequestMethod.POST)
-    public ListResponse saveUser(@RequestBody final User user, HttpServletResponse http) {
+    public ListResponse saveUser(@RequestBody final Usuario user, HttpServletResponse http) {
         userRepository.save(user);
         ListResponse response = new ListResponse();
         response.setMessage("Successfully Created");
         response.setStatusCode(http.getStatus());
-        List<User> users = userRepository.findAll();
+        List<Usuario> users = userRepository.findAll();
         response.setData(users);
         return response;
     }
@@ -50,59 +56,19 @@ public class UserController {
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     public ObjectResponse getUser(@PathVariable("id") Integer userId, HttpServletResponse http) {
         ObjectResponse response = new ObjectResponse();
-        if (userRepository.exists(userId)) {
             response.setMessage("Successfully Retrieved");
             response.setStatusCode(http.getStatus());
-            response.setData(userRepository.findOne(userId));
-        } else {
-            response.setMessage("Record not found");
-            response.setStatusCode(404);
-            response.setData(null);
-        }
+            response.setData(userRepository.findById(userId));
         return response;
     }
 
     /**
-     * Find and update a user
-     *
-     * @param user
-     * @return
+     * update a user
      */
     @RequestMapping(method = RequestMethod.PUT)
-    public ObjectResponse updateUser(@RequestBody final User user, HttpServletResponse http) {
-        ObjectResponse response = new ObjectResponse();
-        if (userRepository.exists(user.getId())) {
-            userRepository.upd(user.getName(), user.getEmail(), user.getMobile(), user.getId());
-            response.setMessage("Successfully Updated");
-            response.setStatusCode(http.getStatus());
-            response.setData(userRepository.findOne(user.getId()));
-        } else {
-            response.setMessage("Record not found");
-            response.setStatusCode(404);
-            response.setData(null);
-        }
-        return response;
+    public ResponseEntity<?> updateUser(@PathVariable Integer id, @RequestBody JSONObject jsonObject)
+            throws Exception {
+        return userService.updateDadoUsuario(id, jsonObject);
     }
 
-    /**
-     * Delete a user
-     *
-     * @param userId
-     * @return
-     */
-    @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
-    public ListResponse deleteUser(@PathVariable("id") Integer userId, HttpServletResponse http) {
-        ListResponse response = new ListResponse();
-        if(userRepository.exists(userId)) {
-            userRepository.delete(userId);
-            response.setStatusCode(http.getStatus());
-            response.setMessage("Successfully Deleted");
-        } else {
-            response.setStatusCode(404);
-            response.setMessage("Record not found");
-        }
-        List<User> users = userRepository.findAll();
-        response.setData(users);
-        return response;
-    }
 }
