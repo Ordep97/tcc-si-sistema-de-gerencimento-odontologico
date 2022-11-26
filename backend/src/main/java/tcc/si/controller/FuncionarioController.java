@@ -18,8 +18,8 @@ import java.util.List;
 
 @RestController
 @EnableAutoConfiguration
-@RequestMapping("/api/v1/admin")
-public class AdminControlle {
+@RequestMapping("/api/v1/user/funcionario")
+public class FuncionarioController {
     @Autowired
     private UserRepository userRepository;
 
@@ -68,7 +68,7 @@ public class AdminControlle {
     }
 
     /**
-     *  PUT atualizar usuario
+     * atualiza usuario
      */
     @RequestMapping(value = "/user/{id}",method = RequestMethod.PUT)
     public ResponseEntity<?> updateUser(@PathVariable Integer id, @RequestBody JSONObject jsonObject)
@@ -77,8 +77,8 @@ public class AdminControlle {
     }
 
     /*
-     * POST cadastrar consulta
-     */
+    * POST cadastrar consulta
+    */
 
     @RequestMapping(value = "/consulta",method = RequestMethod.POST)
     public ListResponse salveConsulta(@RequestBody final Consulta consulta, HttpServletResponse http) {
@@ -105,8 +105,8 @@ public class AdminControlle {
     }
 
     /*
-     * Get em todas consultas
-     */
+    * Get em todas consultas
+    */
 
     @RequestMapping(value = "/consulta", method = RequestMethod.GET)
     public ListResponse getAllColsultas(HttpServletResponse http) {

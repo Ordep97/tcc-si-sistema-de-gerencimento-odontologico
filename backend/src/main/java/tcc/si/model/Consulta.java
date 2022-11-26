@@ -19,6 +19,35 @@ public class Consulta {
     @Column(name = "observacao")
     private String observacao;
 
+    public Consulta() {
+    }
 
-    private String dentista;
+    public Consulta(Date data, String observacao) {
+        this.data = data;
+        this.observacao = observacao;
+    }
+
+    public Consulta(Date data) {
+        this.data = data;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public Date getData() {
+        return data;
+    }
+
+    public void setData(Date data) {
+        this.data = data;
+    }
+
+    public String getObservacao() {
+        return observacao;
+    }
+
+    public void setObservacao(String observacao) {
+        this.observacao = observacao;
+    }
 }

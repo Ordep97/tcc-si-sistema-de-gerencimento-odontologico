@@ -22,28 +22,31 @@ public class Usuario {
     @Column(name = "status")
     private Boolean status = true;
 
-    @Column(name = "paciente")
-    private boolean paciente = true;
-
-    @Column(name = "atendente")
-    private boolean atendente = false;
-
-    @Column(name = "admin")
-    private boolean admin = false;
+    @ManyToOne(cascade = CascadeType.PERSIST)
+    private TipoUsuario tipoUsuario;
 
     @OneToOne(cascade = CascadeType.ALL)
     private DadoUsuario dadoUsuario;
 
     @ManyToOne(cascade = CascadeType.PERSIST)
-    private Endereco userAdress;
+    private Endereco endereco;
 
-    @OneToMany(cascade = CascadeType.ALL)
+    @ManyToMany(cascade = CascadeType.PERSIST)
     private Consulta consulta;
 
-    public Usuario(String nome, String senha, DadoUsuario dadoUsuario) {
+    public Usuario(String nome, String senha, DadoUsuario dadoUsuario, Endereco endereco) {
         this.nome = nome;
         this.senha = senha;
         this.dadoUsuario = dadoUsuario;
+        this.endereco = endereco;
+    }
+
+    public Usuario(String nome, String senha, TipoUsuario tipoUsuario, DadoUsuario dadoUsuario, Endereco endereco) {
+        this.nome = nome;
+        this.senha = senha;
+        this.tipoUsuario = tipoUsuario;
+        this.dadoUsuario = dadoUsuario;
+        this.endereco = endereco;
     }
 
     public Usuario() {
@@ -69,11 +72,11 @@ public class Usuario {
         this.senha = senha;
     }
 
-    public DadoUsuario getdadoUsuario() {
+    public DadoUsuario getDadoUsuario() {
         return dadoUsuario;
     }
 
-    public void setdadoUsuario(DadoUsuario dadoUsuario) {
+    public void setDadoUsuario(DadoUsuario dadoUsuario) {
         this.dadoUsuario = dadoUsuario;
     }
 
@@ -85,11 +88,27 @@ public class Usuario {
         this.status = status;
     }
 
-    public boolean isAdmin() {
-        return admin;
+    public TipoUsuario getTipoUsuario() {
+        return tipoUsuario;
     }
 
-    public void setAdmin(boolean admin) {
-        this.admin = admin;
+    public void setTipoUsuario(TipoUsuario tipoUsuario) {
+        this.tipoUsuario = tipoUsuario;
+    }
+
+    public Endereco getEndereco() {
+        return endereco;
+    }
+
+    public void setEndereco(Endereco endereco) {
+        this.endereco = endereco;
+    }
+
+    public Consulta getConsulta() {
+        return consulta;
+    }
+
+    public void setConsulta(Consulta consulta) {
+        this.consulta = consulta;
     }
 }

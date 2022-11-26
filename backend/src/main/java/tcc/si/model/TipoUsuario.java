@@ -12,4 +12,23 @@ public class TipoUsuario {
 
     @Column(name = "tipo")
     private String tipo = "paciente";
+
+    public TipoUsuario(String tipo) {
+        this.tipo = tipo;
+    }
+
+    public TipoUsuario() {
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public String getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
+    }
 }
