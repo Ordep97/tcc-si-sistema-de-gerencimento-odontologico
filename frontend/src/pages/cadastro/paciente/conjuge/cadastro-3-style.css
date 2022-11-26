@@ -1,8 +1,4 @@
-/* Separando os estilos em blocos */
-
-/* bloco geral*/
-
-* {
+/* * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -11,29 +7,15 @@
     border: none;
 }
 
-body {
-    background-image: url('../img/0405-Capa-Odontologia-inclusiva.png');
-    background-size: cover;
-}
-
-textarea:focus, input:focus {
+textarea:focus,
+input:focus {
     outline: none;
-}
+} */
 
-a {
-    font-size: .8rem;
-    margin-top: 10px;
-}
-
-a:hover {
-    color: #08558B;
-}
-
-/* container do login */
-
-#login-container {
+/* container do conjuge */
+/* .container {
     background-color: #FFF;
-    width: 400px;
+    width: 30%;
     margin-left: auto;
     margin-right: auto;
     padding: 20px 30px;
@@ -42,20 +24,21 @@ a:hover {
     border-radius: 10px;
     text-align: center;
     opacity: 0.7;
-}
+} */
 
 /* formulário */
 
-form {
+/* .form {
     margin-top: 30px;
     margin-bottom: 40px;
 }
 
-label, input {
+label,
+input {
     display: block;
     width: 100%;
     text-align: left;
-    
+
 }
 
 label {
@@ -64,13 +47,13 @@ label {
     font-size: .8rem;
 }
 
-input{
+input {
     border-bottom: 2px solid #323232;
     padding: 10px;
     font-size: 1rem;
 }
 
-input:focus{
+input:focus {
     border-bottom: 2px solid #08558B;
 }
 
@@ -96,3 +79,33 @@ input[type="submit"]:hover {
     background-color: #1b223c;
     transition: .5s;
 }
+
+@media only screen and (min-width : 100px) {
+    .container {
+        width: 90%;
+    }
+}
+
+@media only screen and (min-width : 420px) {
+    .container {
+        width: 70%;
+    }
+}
+
+@media only screen and (min-width : 680px) {
+    .container {
+        width: 60%;
+    }
+}
+
+@media only screen and (min-width : 800px) {
+    .container {
+        width: 55%;
+    }
+}
+
+@media only screen and (min-width : 992px) {
+    .container {
+        width: 30%;
+    }
+} */

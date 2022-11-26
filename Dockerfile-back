@@ -1,0 +1,20 @@
+#BUILD
+FROM maven:3.8.4-openjdk-17-slim AS build
+COPY backend/pom.xml /home/app/
+COPY backend/src /home/app/src
+RUN mvn -f /home/app/pom.xml clean install -DskipTests
+#
+# Aplicação
+#
+FROM openjdk:17-jdk-alpine
+#RUN addgroup -S spring && adduser -S spring -G spring
+RUN groupadd -g 999 spring && \
+    useradd -m -s /bin/bash -r -u 999 -g spring spring
+
+WORKDIR /opt/bluebank
+COPY --chown=spring:spring --from=build /home/app/target/*.jar app.jar
+
+USER spring:spring
+EXPOSE 8080
+
+ENTRYPOINT ["java","-jar", "app.jar"]

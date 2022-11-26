@@ -1,0 +1,47 @@
+version: '3.8'
+services:
+  db:
+    container_name: db
+    networks:
+      sgco:
+        ipv4_address: 10.5.0.5
+    image: mysql:8.0.31
+    hostname: db
+    ports:
+      - '3306:3306'
+    restart: on-failure
+    command: --default-authentication-plugin=mysql_native_password
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+
+  back:
+    container_name: back
+    networks:
+      sgco:
+        ipv4_address: 10.5.0.6
+    image: back:local
+    hostname: back
+    ports:
+      - '8080:8080'
+    restart: on-failure
+    links:
+      - db
+
+  front:
+    container_name: front
+    networks:
+      sgco:
+        ipv4_address: 10.5.0.7
+    image: front:local
+    hostname: front
+    ports:
+      - '80:3000'
+    restart: on-failure
+    links:
+      - back
+networks:
+  sgco:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 10.5.0.0/16
