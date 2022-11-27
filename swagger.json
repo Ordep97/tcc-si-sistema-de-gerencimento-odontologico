@@ -1,0 +1,793 @@
+{
+    "openapi": "3.0.1",
+    "info": {
+    "title": "TCC SGCO - API",
+    "description": "Documentação da API",
+    "version": "1.0"
+    },
+    "servers": [
+    {
+    "url": "http://localhost:8080",
+    "description": "Generated server url"
+    }
+    ],
+    "paths": {
+    "/v1/operador/users/{id}": {
+    "get": {
+    "tags": [
+    "operador-controller"
+    ],
+    "operationId": "getUserById_1",
+    "parameters": [
+    {
+    "name": "id",
+    "in": "path",
+    "required": true,
+    "schema": {
+    "type": "integer",
+    "format": "int32"
+    }
+    }
+    ],
+    "responses": {
+    "200": {
+    "description": "OK",
+    "content": {
+    "*/*": {
+    "schema": {
+    "$ref": "#/components/schemas/Usuario"
+    }
+    }
+    }
+    }
+    }
+    },
+    "put": {
+    "tags": [
+    "operador-controller"
+    ],
+    "operationId": "updateUser",
+    "parameters": [
+    {
+    "name": "id",
+    "in": "path",
+    "required": true,
+    "schema": {
+    "type": "integer",
+    "format": "int32"
+    }
+    }
+    ],
+    "requestBody": {
+    "content": {
+    "application/json": {
+    "schema": {
+    "$ref": "#/components/schemas/JSONObject"
+    }
+    }
+    },
+    "required": true
+    },
+    "responses": {
+    "200": {
+    "description": "OK",
+    "content": {
+    "*/*": {
+    "schema": {
+    "type": "object"
+    }
+    }
+    }
+    }
+    }
+    }
+    },
+    "/v1/operador/consultas/{id}": {
+    "get": {
+    "tags": [
+    "operador-controller"
+    ],
+    "operationId": "getConsultaById",
+    "parameters": [
+    {
+    "name": "id",
+    "in": "path",
+    "required": true,
+    "schema": {
+    "type": "integer",
+    "format": "int32"
+    }
+    }
+    ],
+    "responses": {
+    "200": {
+    "description": "OK",
+    "content": {
+    "*/*": {
+    "schema": {
+    "$ref": "#/components/schemas/Consulta"
+    }
+    }
+    }
+    }
+    }
+    },
+    "put": {
+    "tags": [
+    "operador-controller"
+    ],
+    "operationId": "updateConsulta",
+    "parameters": [
+    {
+    "name": "id",
+    "in": "path",
+    "required": true,
+    "schema": {
+    "type": "integer",
+    "format": "int32"
+    }
+    }
+    ],
+    "requestBody": {
+    "content": {
+    "application/json": {
+    "schema": {
+    "$ref": "#/components/schemas/Consulta"
+    }
+    }
+    },
+    "required": true
+    },
+    "responses": {
+    "200": {
+    "description": "OK",
+    "content": {
+    "*/*": {
+    "schema": {
+    "$ref": "#/components/schemas/Consulta"
+    }
+    }
+    }
+    }
+    }
+    }
+    },
+    "/v1/admin/users/{id}": {
+    "get": {
+    "tags": [
+    "admin-controlle"
+    ],
+    "operationId": "getUserById_2",
+    "parameters": [
+    {
+    "name": "id",
+    "in": "path",
+    "required": true,
+    "schema": {
+    "type": "integer",
+    "format": "int32"
+    }
+    }
+    ],
+    "responses": {
+    "200": {
+    "description": "OK",
+    "content": {
+    "*/*": {
+    "schema": {
+    "$ref": "#/components/schemas/Usuario"
+    }
+    }
+    }
+    }
+    }
+    },
+    "put": {
+    "tags": [
+    "admin-controlle"
+    ],
+    "operationId": "updateUser_1",
+    "parameters": [
+    {
+    "name": "id",
+    "in": "path",
+    "required": true,
+    "schema": {
+    "type": "integer",
+    "format": "int32"
+    }
+    }
+    ],
+    "requestBody": {
+    "content": {
+    "application/json": {
+    "schema": {
+    "$ref": "#/components/schemas/JSONObject"
+    }
+    }
+    },
+    "required": true
+    },
+    "responses": {
+    "200": {
+    "description": "OK",
+    "content": {
+    "*/*": {
+    "schema": {
+    "type": "object"
+    }
+    }
+    }
+    }
+    }
+    },
+    "delete": {
+    "tags": [
+    "admin-controlle"
+    ],
+    "operationId": "deleteUser",
+    "parameters": [
+    {
+    "name": "id",
+    "in": "path",
+    "required": true,
+    "schema": {
+    "type": "integer",
+    "format": "int32"
+    }
+    }
+    ],
+    "responses": {
+    "200": {
+    "description": "OK",
+    "content": {
+    "*/*": {
+    "schema": {
+    "type": "object"
+    }
+    }
+    }
+    }
+    }
+    }
+    },
+    "/v1/admin/consultas/{id}": {
+    "get": {
+    "tags": [
+    "admin-controlle"
+    ],
+    "operationId": "getConsultaById_2",
+    "parameters": [
+    {
+    "name": "id",
+    "in": "path",
+    "required": true,
+    "schema": {
+    "type": "integer",
+    "format": "int32"
+    }
+    }
+    ],
+    "responses": {
+    "200": {
+    "description": "OK",
+    "content": {
+    "*/*": {
+    "schema": {
+    "$ref": "#/components/schemas/Consulta"
+    }
+    }
+    }
+    }
+    }
+    },
+    "put": {
+    "tags": [
+    "admin-controlle"
+    ],
+    "operationId": "updateConsulta_1",
+    "parameters": [
+    {
+    "name": "id",
+    "in": "path",
+    "required": true,
+    "schema": {
+    "type": "integer",
+    "format": "int32"
+    }
+    }
+    ],
+    "requestBody": {
+    "content": {
+    "application/json": {
+    "schema": {
+    "$ref": "#/components/schemas/Consulta"
+    }
+    }
+    },
+    "required": true
+    },
+    "responses": {
+    "200": {
+    "description": "OK",
+    "content": {
+    "*/*": {
+    "schema": {
+    "$ref": "#/components/schemas/Consulta"
+    }
+    }
+    }
+    }
+    }
+    },
+    "delete": {
+    "tags": [
+    "admin-controlle"
+    ],
+    "operationId": "deleteConsulta",
+    "parameters": [
+    {
+    "name": "id",
+    "in": "path",
+    "required": true,
+    "schema": {
+    "type": "integer",
+    "format": "int32"
+    }
+    }
+    ],
+    "responses": {
+    "200": {
+    "description": "OK",
+    "content": {
+    "*/*": {
+    "schema": {
+    "type": "object"
+    }
+    }
+    }
+    }
+    }
+    }
+    },
+    "/v1/operador/users": {
+    "get": {
+    "tags": [
+    "operador-controller"
+    ],
+    "operationId": "getUsers",
+    "responses": {
+    "200": {
+    "description": "OK",
+    "content": {
+    "*/*": {
+    "schema": {
+    "type": "array",
+    "items": {
+    "$ref": "#/components/schemas/Usuario"
+    }
+    }
+    }
+    }
+    }
+    }
+    },
+    "post": {
+    "tags": [
+    "operador-controller"
+    ],
+    "operationId": "creatUser",
+    "requestBody": {
+    "content": {
+    "application/json": {
+    "schema": {
+    "$ref": "#/components/schemas/Usuario"
+    }
+    }
+    },
+    "required": true
+    },
+    "responses": {
+    "200": {
+    "description": "OK",
+    "content": {
+    "*/*": {
+    "schema": {
+    "$ref": "#/components/schemas/Usuario"
+    }
+    }
+    }
+    }
+    }
+    }
+    },
+    "/v1/operador/consultas": {
+    "get": {
+    "tags": [
+    "operador-controller"
+    ],
+    "operationId": "getConsultas",
+    "responses": {
+    "200": {
+    "description": "OK",
+    "content": {
+    "*/*": {
+    "schema": {
+    "type": "array",
+    "items": {
+    "$ref": "#/components/schemas/Consulta"
+    }
+    }
+    }
+    }
+    }
+    }
+    },
+    "post": {
+    "tags": [
+    "operador-controller"
+    ],
+    "operationId": "criarConsulta",
+    "requestBody": {
+    "content": {
+    "application/json": {
+    "schema": {
+    "$ref": "#/components/schemas/Consulta"
+    }
+    }
+    },
+    "required": true
+    },
+    "responses": {
+    "200": {
+    "description": "OK",
+    "content": {
+    "*/*": {
+    "schema": {
+    "$ref": "#/components/schemas/Consulta"
+    }
+    }
+    }
+    }
+    }
+    }
+    },
+    "/v1/admin/users": {
+    "get": {
+    "tags": [
+    "admin-controlle"
+    ],
+    "operationId": "getUsers_1",
+    "responses": {
+    "200": {
+    "description": "OK",
+    "content": {
+    "*/*": {
+    "schema": {
+    "type": "array",
+    "items": {
+    "$ref": "#/components/schemas/Usuario"
+    }
+    }
+    }
+    }
+    }
+    }
+    },
+    "post": {
+    "tags": [
+    "admin-controlle"
+    ],
+    "operationId": "creatUser_1",
+    "requestBody": {
+    "content": {
+    "application/json": {
+    "schema": {
+    "$ref": "#/components/schemas/Usuario"
+    }
+    }
+    },
+    "required": true
+    },
+    "responses": {
+    "200": {
+    "description": "OK",
+    "content": {
+    "*/*": {
+    "schema": {
+    "$ref": "#/components/schemas/Usuario"
+    }
+    }
+    }
+    }
+    }
+    }
+    },
+    "/v1/admin/consultas": {
+    "get": {
+    "tags": [
+    "admin-controlle"
+    ],
+    "operationId": "getConsultas_1",
+    "responses": {
+    "200": {
+    "description": "OK",
+    "content": {
+    "*/*": {
+    "schema": {
+    "type": "array",
+    "items": {
+    "$ref": "#/components/schemas/Consulta"
+    }
+    }
+    }
+    }
+    }
+    }
+    },
+    "post": {
+    "tags": [
+    "admin-controlle"
+    ],
+    "operationId": "criarConsulta_1",
+    "requestBody": {
+    "content": {
+    "application/json": {
+    "schema": {
+    "$ref": "#/components/schemas/Consulta"
+    }
+    }
+    },
+    "required": true
+    },
+    "responses": {
+    "200": {
+    "description": "OK",
+    "content": {
+    "*/*": {
+    "schema": {
+    "$ref": "#/components/schemas/Consulta"
+    }
+    }
+    }
+    }
+    }
+    }
+    },
+    "/v1/users/{id}": {
+    "get": {
+    "tags": [
+    "usuario-controller"
+    ],
+    "operationId": "getUserById",
+    "parameters": [
+    {
+    "name": "id",
+    "in": "path",
+    "required": true,
+    "schema": {
+    "type": "integer",
+    "format": "int32"
+    }
+    }
+    ],
+    "responses": {
+    "200": {
+    "description": "OK",
+    "content": {
+    "*/*": {
+    "schema": {
+    "$ref": "#/components/schemas/Usuario"
+    }
+    }
+    }
+    }
+    }
+    }
+    },
+    "/v1/getSenha/{id}": {
+    "get": {
+    "tags": [
+    "usuario-controller"
+    ],
+    "operationId": "pegarSenha",
+    "parameters": [
+    {
+    "name": "id",
+    "in": "path",
+    "required": true,
+    "schema": {
+    "type": "integer",
+    "format": "int32"
+    }
+    }
+    ],
+    "responses": {
+    "200": {
+    "description": "OK",
+    "content": {
+    "*/*": {
+    "schema": {
+    "type": "string"
+    }
+    }
+    }
+    }
+    }
+    }
+    },
+    "/v1/consultas/{id}": {
+    "get": {
+    "tags": [
+    "usuario-controller"
+    ],
+    "operationId": "getConsultaById_1",
+    "parameters": [
+    {
+    "name": "id",
+    "in": "path",
+    "required": true,
+    "schema": {
+    "type": "integer",
+    "format": "int32"
+    }
+    }
+    ],
+    "responses": {
+    "200": {
+    "description": "OK",
+    "content": {
+    "*/*": {
+    "schema": {
+    "$ref": "#/components/schemas/Consulta"
+    }
+    }
+    }
+    }
+    }
+    }
+    }
+    },
+    "components": {
+    "schemas": {
+    "JSONObject": {
+    "type": "object",
+    "properties": {
+    "empty": {
+    "type": "boolean"
+    }
+    },
+    "additionalProperties": {
+    "type": "object"
+    }
+    },
+    "Consulta": {
+    "type": "object",
+    "properties": {
+    "id": {
+    "type": "integer",
+    "format": "int32"
+    },
+    "data": {
+    "type": "string",
+    "format": "date-time"
+    },
+    "pacientes": {
+    "type": "array",
+    "items": {
+    "$ref": "#/components/schemas/Usuario"
+    }
+    },
+    "observacao": {
+    "type": "string"
+    }
+    }
+    },
+    "DadoUsuario": {
+    "type": "object",
+    "properties": {
+    "id": {
+    "type": "integer",
+    "format": "int32"
+    },
+    "dataNascimento": {
+    "type": "string",
+    "format": "date-time"
+    },
+    "cpf": {
+    "type": "string"
+    },
+    "sexo": {
+    "type": "string"
+    },
+    "celular": {
+    "type": "string"
+    },
+    "telefone": {
+    "type": "string"
+    },
+    "email": {
+    "type": "string"
+    },
+    "estadoCivil": {
+    "type": "string"
+    }
+    }
+    },
+    "Endereco": {
+    "type": "object",
+    "properties": {
+    "id": {
+    "type": "integer",
+    "format": "int32"
+    },
+    "cep": {
+    "type": "string"
+    },
+    "logradouro": {
+    "type": "string"
+    },
+    "numero": {
+    "type": "integer",
+    "format": "int32"
+    },
+    "complemento": {
+    "type": "string"
+    },
+    "referencia": {
+    "type": "string"
+    },
+    "bairro": {
+    "type": "string"
+    },
+    "municipio": {
+    "type": "string"
+    },
+    "estado": {
+    "type": "string"
+    },
+    "pais": {
+    "type": "string"
+    }
+    }
+    },
+    "Usuario": {
+    "required": [
+    "nome",
+    "senha"
+    ],
+    "type": "object",
+    "properties": {
+    "id": {
+    "type": "integer",
+    "format": "int32"
+    },
+    "nome": {
+    "type": "string"
+    },
+    "senha": {
+    "type": "string"
+    },
+    "status": {
+    "type": "boolean"
+    },
+    "tipoUsuario": {
+    "type": "string"
+    },
+    "dadoUsuario": {
+    "$ref": "#/components/schemas/DadoUsuario"
+    },
+    "endereco": {
+    "$ref": "#/components/schemas/Endereco"
+    },
+    "consultas": {
+    "type": "array",
+    "items": {
+    "$ref": "#/components/schemas/Consulta"
+    }
+    }
+    }
+    }
+    }
+    }
+    }

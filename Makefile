@@ -17,6 +17,8 @@ build-back-local: ##        - Build Backend local
 build-back-gcp: ##        - Build Backend GCP
 	docker build -t gcr.io/${PROJECT_ID}/sgco/back-sgco:${VERSION} -f Dockerfile-back .
 
+build: build-front-local build-back-local
+
 run: ##          - Executa o projeto
 	docker-compose up
 
