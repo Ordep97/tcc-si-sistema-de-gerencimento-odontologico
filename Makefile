@@ -4,23 +4,24 @@ help:
 
 
 VERSION=1.0
+PROJECT_ID=tcc-sgco
 build-front-local: ##        - Build Frontend Local
 	docker build --platform linux/amd64 -t front-sgco:${VERSION} -f Dockerfile-front .
 
 build-front-gcp: ##        - Build Frontend GCP
-	docker build -t us-east1-docker.pkg.dev/${PROJECT_ID}/sgco/front-sgco:${VERSION} -f Dockerfile-front .
+	docker build -t gcr.io/${PROJECT_ID}/sgco/front-sgco:${VERSION} -f Dockerfile-front .
 
 build-back-local: ##        - Build Backend local
 	docker build --platform linux/amd64 -t api-sgco:${VERSION} -f Dockerfile-back .
 
 build-back-gcp: ##        - Build Backend GCP
-	docker build -t us-east1-docker.pkg.dev/${PROJECT_ID}/sgco/back-sgco:${VERSION} -f Dockerfile-back .
+	docker build -t gcr.io/${PROJECT_ID}/sgco/back-sgco:${VERSION} -f Dockerfile-back .
 
 run: ##          - Executa o projeto
 	docker-compose up
 
 publish-front: ##- Push Frontend Docker Image
-	docker push us-east1-docker.pkg.dev/${PROJECT_ID}/sgco/front-sgco:${VERSION}
+	docker push gcr.io/${PROJECT_ID}/sgco/front-sgco:${VERSION}
 
 publish-back: ##- Push Backend Docker Image
-	docker push us-east1-docker.pkg.dev/${PROJECT_ID}/sgco/back-sgco:${VERSION}
+	docker push gcr.io/${PROJECT_ID}/sgco/back-sgco:${VERSION}
