@@ -1,11 +1,9 @@
 import React from "react";
-import "./cadastro-identificacao-style.css";
+import "./dados-identificacao-style.css";
 
 const CadastroIdentificacaoPage = () => {
     return (
             <section class="container-identificacao">
-
-                <h1>CADASTRO DE PACIENTE</h1>
 
                 <form class="form-identificacao">
 
@@ -44,7 +42,7 @@ const CadastroIdentificacaoPage = () => {
                         <option value="Viúvo">Viúvo(a)</option>
                     </select>
 
-                    <a href="/cadastro-localizacao"><input type="submitProximo" value="Próximo"></input></a>
+                    <a href="/user/dados/localizacao"><input type="submitProximo" value="Próximo"></input></a>
                 </form>
             </section>
     );

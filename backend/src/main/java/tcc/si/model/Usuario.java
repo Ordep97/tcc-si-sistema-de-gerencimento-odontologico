@@ -2,6 +2,8 @@ package tcc.si.model;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
+import java.util.List;
+import java.util.Optional;
 
 @Entity
 @Table(name = "usuario")
@@ -22,8 +24,7 @@ public class Usuario {
     @Column(name = "status")
     private Boolean status = true;
 
-    @ManyToOne(cascade = CascadeType.PERSIST)
-    private TipoUsuario tipoUsuario;
+    private String tipoUsuario = "paciente";
 
     @OneToOne(cascade = CascadeType.ALL)
     private DadoUsuario dadoUsuario;
@@ -32,19 +33,14 @@ public class Usuario {
     private Endereco endereco;
 
     @ManyToMany(cascade = CascadeType.PERSIST)
-    private Consulta consulta;
+    @JoinTable(name = "USUARIO_has_CONCULTA",
+                joinColumns = {@JoinColumn(name = "usuario_id")},
+                inverseJoinColumns = {@JoinColumn(name = "consulta_id")})
+    private List<Consulta> consultas;
 
     public Usuario(String nome, String senha, DadoUsuario dadoUsuario, Endereco endereco) {
         this.nome = nome;
         this.senha = senha;
-        this.dadoUsuario = dadoUsuario;
-        this.endereco = endereco;
-    }
-
-    public Usuario(String nome, String senha, TipoUsuario tipoUsuario, DadoUsuario dadoUsuario, Endereco endereco) {
-        this.nome = nome;
-        this.senha = senha;
-        this.tipoUsuario = tipoUsuario;
         this.dadoUsuario = dadoUsuario;
         this.endereco = endereco;
     }
@@ -88,11 +84,11 @@ public class Usuario {
         this.status = status;
     }
 
-    public TipoUsuario getTipoUsuario() {
+    public String getTipoUsuario() {
         return tipoUsuario;
     }
 
-    public void setTipoUsuario(TipoUsuario tipoUsuario) {
+    public void setTipoUsuario(String tipoUsuario) {
         this.tipoUsuario = tipoUsuario;
     }
 
@@ -104,11 +100,11 @@ public class Usuario {
         this.endereco = endereco;
     }
 
-    public Consulta getConsulta() {
-        return consulta;
+    public List<Consulta> getConsultas() {
+        return consultas;
     }
 
-    public void setConsulta(Consulta consulta) {
-        this.consulta = consulta;
+    public void setConsultas(List<Consulta> consultas) {
+        this.consultas = consultas;
     }
 }

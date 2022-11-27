@@ -12,7 +12,8 @@ import "./login-style.css";
                 <input type="email" name="email" id="email" placeholder="Digite seu e-mail" autocomplete="off"/>
                 <label for="password">Senha</label>
                 <input type="password" name="password" id="password" placeholder="Digite a sua senha"/>
-                <input type="submitEntrar" value="Entrar"/>            
+                <a href="/user-page"><input type="submitEntrar" value="Entrar"/> </a>
+                {/* <input type="submitEntrar" value="Entrar"/> */}
             </form>
         </div>    
     );

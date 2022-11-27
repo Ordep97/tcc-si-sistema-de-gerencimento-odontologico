@@ -6,8 +6,7 @@ import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import tcc.si.model.Consulta;
-import tcc.si.model.Usuario;
+import tcc.si.model.*;
 import tcc.si.repository.ConsultaRepository;
 import tcc.si.repository.UserRepository;
 import tcc.si.service.UserService;
@@ -18,8 +17,8 @@ import java.util.Optional;
 
 @RestController
 @EnableAutoConfiguration
-@RequestMapping("/v1/admin")
-public class AdminControlle {
+@RequestMapping("/v1/operador")
+public class OperadorController {
     @Autowired
     private UserRepository userRepository;
 
@@ -61,7 +60,7 @@ public class AdminControlle {
     }
 
     /*
-     * Atualizar usuario
+     * atualizar usuario
      */
     @RequestMapping(value = "/users/{id}",method = RequestMethod.PUT)
     public ResponseEntity<?> updateUser(@PathVariable Integer id, @RequestBody JSONObject jsonObject)
@@ -70,23 +69,8 @@ public class AdminControlle {
     }
 
     /*
-     * Deletar usuario
-     */
-    @RequestMapping(value = "/users/{id}", method = RequestMethod.DELETE)
-    public ResponseEntity<Object> deleteUser(@PathVariable(value = "id") Integer id)
-    {
-        Optional<Usuario> user = userRepository.findById(id);
-        if(user.isPresent()){
-            userRepository.delete(user.get());
-            return new ResponseEntity<>(HttpStatus.OK);
-        }
-        else
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-    }
-
-    /*
-     * Cadastrar consulta
-     */
+    * Cadastrar consulta
+    */
 
     @RequestMapping(value = "/consultas",method = RequestMethod.POST)
     public Consulta criarConsulta(@Valid @RequestBody final Consulta consulta)
@@ -95,7 +79,7 @@ public class AdminControlle {
     }
 
     /*
-     * Atualizar consulta
+     * atualizar consulta
      */
     @RequestMapping(value = "/consultas/{id}", method = RequestMethod.PUT)
     public ResponseEntity<Consulta> updateConsulta(@PathVariable(value = "id") Integer id, @Valid @RequestBody Consulta newConsulta)
@@ -128,26 +112,11 @@ public class AdminControlle {
     }
 
     /*
-     * Get em todas consultas
-     */
+    * Get em todas consultas
+    */
 
     @RequestMapping(value = "/consultas", method = RequestMethod.GET)
     public List<Consulta> getConsultas() {
         return consultaRepository.findAll();
-    }
-
-    /*
-     * Deletar consulta
-     */
-    @RequestMapping(value = "/consultas/{id}", method = RequestMethod.DELETE)
-    public ResponseEntity<Object> deleteConsulta(@PathVariable(value = "id") Integer id)
-    {
-        Optional<Consulta> consulta = consultaRepository.findById(id);
-        if(consulta.isPresent()){
-            consultaRepository.delete(consulta.get());
-            return new ResponseEntity<>(HttpStatus.OK);
-        }
-        else
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
 }

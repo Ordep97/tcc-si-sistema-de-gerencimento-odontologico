@@ -1,14 +1,14 @@
 import React from "react";
-import "./login-paciente-style.css";
-import dadospaciente from '../../../assets/login-paciente/dados-paciente.png';
-import consultaspaciente from '../../../assets/login-paciente/consultas-paciente.png'
+import "./user-page-style.css";
+import dadospaciente from '../../assets/user-page/dados-paciente.png';
+import consultaspaciente from '../../assets/user-page/consultas-paciente.png'
 
 
   const LoginPacientePage = () => {
     return(
 
 
-        <div class="container-login-paciente">
+        <div class="container-user-page">
 
             <h1>Bem vindo, "Usuário"...</h1>
 
@@ -20,7 +20,7 @@ import consultaspaciente from '../../../assets/login-paciente/consultas-paciente
                         </div>
                         <h2>Altere aqui seus dados já cadastrados</h2>
                         <p>Aqui poderá visualizar e alterar os seus dados cadastrados.</p>
-                        <input type="submitMeusDados" value="Meus dados"/>
+                        <a href="/user/dados"><input type="submitMeusDados" value="Meus dados"/> </a>
                     </section>
 
                     <section class="minhas-consultas">

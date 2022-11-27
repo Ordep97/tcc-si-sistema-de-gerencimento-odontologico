@@ -1,13 +1,11 @@
 import React from "react";
-import "./cadastro-localizacao-style.css";
+import "./dados-localizacao-style.css";
 
 const CadastroLocalizacaoPage = () => {
     return (
         <div class="format-localizacao">   
             
             <section class="container-localizacao">
-
-                <h1>CADASTRO DE PACIENTE</h1>
 
                 <form class="form-localizacao">
 
@@ -76,8 +74,8 @@ const CadastroLocalizacaoPage = () => {
                     </select>
 
                     {/* <input type="submitCadastrarDependente" value="Cadastrar dependente" /> */}
-                    <a href="/cadastro-identificacao"><input type="submitFinalizarCadastro" value="Voltar" /></a>
-                    <input type="submitFinalizarCadastro" value="Finalizar Cadastro" />
+                    <a href="/user/dados"><input type="submitFinalizarCadastro" value="Voltar" /></a>
+                    <a href="/user-page"><input type="submitFinalizarCadastro" value="Home Page" /> </a>
                 </form>
             </section>
         </div>

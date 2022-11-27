@@ -7,6 +7,7 @@ import tcc.si.model.Usuario;
 import tcc.si.model.DadoUsuario;
 
 public interface UserService {
-    public abstract void updateUser(Usuario user, DadoUsuario dadoUsuario, Endereco endereco, JSONObject jsonObject) throws Exception;
-    public abstract ResponseEntity<?> updateDadoUsuario(Integer id, JSONObject jsonObject) throws Exception;
+    public abstract void UpdateUser(Usuario user, DadoUsuario dadoUsuario, Endereco endereco, JSONObject jsonObject) throws Exception;
+    public abstract ResponseEntity<?> rpUpdateUser(Integer id, JSONObject jsonObject) throws Exception;
+    public abstract String getSenhaUser(Integer id) throws Exception;
 }

@@ -1,0 +1,77 @@
+textarea:focus, input:focus {
+    outline: none;
+}
+
+
+/* container do localizacao */
+.container-localizacao {
+    background-color: #a1bfd1;
+    min-height: 100%;
+    flex-direction: column;
+    text-align: center;
+}
+
+h1{
+    font-size: 30px;
+    margin-block: auto;
+    padding: 20px;
+}
+
+.form-localizacao {
+    background-color: #FFF;
+    padding: 10px 40px;
+    border-radius: 15px;
+    text-align: center;
+    opacity: 0.7;
+    width: 500px;
+    margin: auto;
+}
+
+label, input, select {
+    display: block;
+    width: 100%;
+    text-align: left;
+    border-radius: 10px;
+
+}
+
+label {
+    margin-top: 10px;
+    font-weight: bold;
+    font-size: .9rem;
+}
+
+input, select {
+
+    margin-top: 5px;
+    border-bottom: 2px solid #323232;
+    margin-top: 3px;
+    padding: 10px;
+    font-size: 1rem;
+}
+
+input:focus {
+    border-radius: none;
+    border: none;
+    border-bottom: 2px solid black;
+}
+
+/* Botão de "Enviar" */
+input[type="submitCadastrarDependente"], input[type="submitFinalizarCadastro"] {
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    border: none;
+    height: 40px;
+    border-radius: 20px;
+    margin-top: 30px;
+    color: #FFF;
+    background-color: #08558B;
+    cursor: pointer;
+}
+
+input[type="submitCadastrarDependente"]:hover, input[type="submitFinalizarCadastro"]:hover {
+    background-color: #1b223c;
+    transition: 1s;
+}
+
