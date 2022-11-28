@@ -15,7 +15,7 @@ build-back-local: ##        - Build Backend local
 	docker build --platform linux/amd64 -t api-sgco:${VERSION} -f Dockerfile-back .
 
 build-back-gcp: ##        - Build Backend GCP
-	docker build -t gcr.io/${PROJECT_ID}/sgco/back-sgco:${VERSION} -f Dockerfile-back .
+	docker build --no-cache -t gcr.io/${PROJECT_ID}/sgco/back-sgco:${VERSION} -f Dockerfile-back .
 
 build: build-front-local build-back-local
 

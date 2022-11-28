@@ -19,7 +19,7 @@ services:
     networks:
       sgco:
         ipv4_address: 10.5.0.6
-    image: back:local
+    image: gcr.io/tcc-sgco/sgco/back-sgco:1.0
     hostname: back
     ports:
       - '8080:8080'
