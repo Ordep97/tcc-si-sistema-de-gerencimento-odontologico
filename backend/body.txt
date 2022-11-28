@@ -1,0 +1,17 @@
+{
+    "nome": "Pedro",
+    "senha": "123",
+    "data_nasc": null,
+    "sexo": null,
+    "dadoUsuario": {
+    "bairro": "nao sei",
+    "cidade": "tbm nao sei",
+    "complemento": "casa",
+    "cpf": "123.658.696-65",
+    "email": "pedro@email.com",
+    "estado": "Rio de Janeiro",
+    "numero": 921,
+    "logradouro": "Av. antonio cunha",
+    "telefone": "(21)9875-6587"
+  }
+}

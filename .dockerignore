@@ -1,0 +1,9 @@
+.dockerignore
+backend
+Dockerfile*
+README*
+*.git*
+docker-compose.yml
+Makefile
+frontend/node_modules
+frontend/build
