@@ -7,8 +7,17 @@
     border: none;
 }
 
+<<<<<<< HEAD:frontend/src/pages/cadastro/paciente/conjuge-feature/cadastro-3-style.css
 textarea:focus,
 input:focus {
+=======
+body {
+    background-image: url('../img/background-Login.png');
+    background-size: cover;
+}
+
+textarea:focus, input:focus {
+>>>>>>> develop:front-end/tela-de-login/css/styles.css
     outline: none;
 } */
 
